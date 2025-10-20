@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hoinarind prin lume — Contact</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/contact.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="site-title">Contact</h1>
+      <nav class="site-nav" aria-label="Navigație principală">
+        <a href="index.html">Acasă</a>
+        <a href="about.html">Despre</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <article class="page">
+        <header><h2>Scrie-ne</h2></header>
+        <!-- formular semnatic; îl stilizezi cu clasele de mai jos -->
+        <form class="contact-form" action="#" method="post">
+          <div class="form-field">
+            <label for="name">Nume</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="form-field">
+            <label for="message">Mesaj</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Trimite</button>
+        </form>
+      </article>
+
+      <aside class="contact-info">
+        <h2>Informații</h2>
+        <address>
+          Str. Viselor 10, București<br />
+          <a href="mailto:hello@hoinarindprinlume.ro"
+            >hello@hoinarindprinlume.ro</a
+          >
+        </address>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <small>&copy; <span data-year>2025</span> Hoinarind prin lume</small>
+      <nav class="footer-nav" aria-label="Navigație secundară">
+        <a href="index.html">Acasă</a>
+        <a href="about.html">Despre</a>
+      </nav>
+    </footer>
+  </body>
+</html>
