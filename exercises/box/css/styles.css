@@ -1,0 +1,17 @@
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: tomato;
+  border-radius: 10%;
+  box-shadow: 10px 10px lightgrey;
+}
+
+p {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: aliceblue;
+  padding: 10px;
+  border: 2px solid cornflowerblue;
+  margin: 100px 30px 50px 80px;
+}

@@ -1,0 +1,29 @@
+body {
+  margin: 100px;
+}
+
+table,
+td {
+  border: 1px solid dodgerblue;
+  border-left: 0;
+  border-right: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 10px;
+}
+
+th {
+  background-color: #427fef;
+  color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: #eef7ff;
+}
+
+tfoot {
+  text-align: left;
+}
