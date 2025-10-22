@@ -4,13 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Titlu</title>
-    <!-- <style>
+
+    <!--  Internal CSS
+    Stilurile sunt scrise în același fișier HTML, între tagurile <style>...</style>.
+    Atenție:
+    - Nu e recomandat pentru proiecte mari (se amestecă HTML cu CSS).
+    - Mai greu de reutilizat pe alte pagini.
+    Exemplu:
+    <style>
       p {
         color: rgb(20, 220, 83);
       }
-    </style> -->
+   </style> -->
 
-    <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+    <!-- External CSS
+     Fișierul CSS este separat de HTML — așa se lucrează profesional.
+     Avantaje:
+     - Cod HTML mai curat.
+     - Stilurile pot fi reutilizate pe mai multe pagini.
+     - Separă conținutul (HTML) de prezentare (CSS). -->
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body id="top">
     <header class="site-header">
@@ -33,6 +46,16 @@
         <h2 id="ex-title">Scroll &amp; styling exercise</h2>
 
         <ul class="quip-list">
+          <!-- Inline CSS
+      Stilul este aplicat direct pe element, prin atributul `style`.
+      Exemplu:
+        <p style="color: red;">M-am trezit astăzi. A fost teribil.</p>
+           
+      Dezavantaje:
+      - Greu de menținut (dacă ai multe elemente).
+      - Nu se poate reutiliza.
+      - Are cea mai mare prioritate, deci poate suprascrie alte stiluri. -->
+
           <li><p>M-am trezit astăzi. A fost teribil.</p></li>
 
           <li>

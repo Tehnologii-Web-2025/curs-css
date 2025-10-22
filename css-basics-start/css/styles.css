@@ -1,0 +1,108 @@
+/*─────────────────────────────────────────────
+  SELECTORI DE TIP (sau „tag selectors”)
+  - Se aplică direct pe numele unui element HTML.
+  - Exemplu: body, p, h1, section etc.
+  - Afectează toate elementele de acel tip din pagină.
+  Vedeti https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors pentru mai multe detalii
+──────────────────────────────────────────────*/
+body {
+  font-size: 16px; /* standardul recomandat pentru text */
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #fff;
+}
+
+p {
+  color: darkblue;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.6;
+}
+
+/*─────────────────────────────────────────────
+  SELECTORI DE CLASĂ
+  - Încep cu punct (.)
+  - Se folosesc pentru a stiliza mai multe elemente care au același „rol vizual”.
+  - Un element poate avea mai multe clase (ex: class="note important").
+──────────────────────────────────────────────*/
+.note {
+  color: seagreen;
+}
+
+.important {
+  font-weight: bold;
+  color: crimson;
+}
+
+/*─────────────────────────────────────────────
+  SELECTOR DE ID
+  - Începe cu diez (#)
+  - Se aplică pe un element unic din pagină.
+  - Fiecare ID trebuie să fie folosit o singură dată per fișier HTML.
+  - Util pentru secțiuni unice: header principal, introducere, footer etc.
+──────────────────────────────────────────────*/
+#intro {
+  background-color: lightblue;
+  color: navy;
+  text-align: center;
+  padding: 50px 0;
+  border-radius: 10px;
+}
+
+/*─────────────────────────────────────────────
+  SELECTORI DE TIP COMBINAT (sau „selector de grup”)
+  - Aici avem două elemente HTML scrise separate prin virgulă.
+  - Înseamnă: aplică aceleași stiluri atât lui <header>, cât și lui <footer>.
+──────────────────────────────────────────────*/
+header,
+footer {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 1rem;
+}
+
+/*─────────────────────────────────────────────
+  SELECTOR DE TIP (main)
+  - Tot un selector de tip, dar aplicat unui element semantic modern (<main>).
+  - Folosim <main> pentru conținutul principal al paginii.
+──────────────────────────────────────────────*/
+main {
+  padding: 2rem 1rem;
+}
+
+/*─────────────────────────────────────────────
+  SELECTOR DE DESCENDENT (ul.quip-list)
+  - Înseamnă: selectează doar <ul> care au clasa "quip-list".
+  - Dacă aș scrie doar .quip-list, s-ar aplica oricărui element cu acea clasă.
+──────────────────────────────────────────────*/
+ul.quip-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*─────────────────────────────────────────────
+  SELECTOR DE DESCENDENT (ul.quip-list li)
+  - Citește ca: „fiecare <li> aflat într-un <ul> cu clasa .quip-list”.
+  - Practic, merge un nivel mai adânc în structură.
+──────────────────────────────────────────────*/
+ul.quip-list li {
+  background-color: #fafafa;
+  border-left: 4px solid lightgray;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  border-radius: 4px;
+}
+
+/*─────────────────────────────────────────────
+  SELECTORI PSEUDO-CLASĂ
+  - Se aplică pe stări speciale ale unui element (ex: hover, focus, active).
+  - Aici: a:hover schimbă stilul linkului când treci cu mouse-ul peste el.
+──────────────────────────────────────────────*/
+a {
+  color: royalblue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

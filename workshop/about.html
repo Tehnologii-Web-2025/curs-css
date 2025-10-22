@@ -9,7 +9,14 @@
   </head>
   <body>
     <header class="site-header">
+      <a href="index.html" class="logo" aria-label="Acasă"
+        ><span class="logo-text">Vacation World</span></a
+      >
       <h1 class="site-title">Despre proiect</h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+      <label for="nav-toggle" class="menu-toggle" aria-label="Deschide meniul"
+        >☰ Meniu</label
+      >
       <nav class="site-nav" aria-label="Navigație principală">
         <a href="index.html">Acasă</a>
         <a href="about.html" aria-current="page">Despre</a>
@@ -25,7 +32,7 @@
           <h3 id="team-title">Echipa</h3>
           <p>Studenți pasionați de web.</p>
         </section>
-        <section aria-labelledby="tech-title" class="tech">
+        <section id="tech-section" aria-labelledby="tech-title" class="tech">
           <h3 id="tech-title">Tehnologii</h3>
           <ul>
             <li>HTML5 semantic</li>

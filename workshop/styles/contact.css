@@ -1,0 +1,114 @@
+/* =========================
+   PAGINA DE CONTACT – BAZĂ
+   ========================= */
+
+/* .page → SELECTOR DE CLASĂ
+   Țintește containerul principal al paginii (în <article class="page">)
+   Scop: să arate ca un panou separat, clar delimitat vizual. */
+.page {
+  background-color: white; /* fundal alb pe care textul se citește ușor */
+  padding: 1rem; /* spațiu intern față de margini (1rem = 16px) */
+  border-radius: 6px; /* colțuri rotunjite, stil modern */
+  border: 1px solid #ddd; /* contur discret, separă de fundalul gri al paginii */
+}
+
+/* =========================
+   FORMULAR DE CONTACT
+   ========================= */
+
+/* .contact-form → SELECTOR DE CLASĂ
+   Containerul formularului.
+   Scop: doar să adauge un spațiu față de titlu sau elementele de deasupra. */
+.contact-form {
+  margin-top: 1rem; /* distanță între titlu și formular */
+}
+
+/* .form-field → SELECTOR DE CLASĂ
+   Fiecare câmp din formular (label + input).
+   Scop: să existe spațiu între câmpuri. */
+.form-field {
+  margin-bottom: 1rem; /* spațiu între câmpuri succesive */
+}
+
+/* SELECTOR DE TIP (label)
+   Stilizează etichetele câmpurilor formularului.
+   Scop: claritate vizuală și aliniere frumoasă. */
+label {
+  display: block; /* fiecare label pe linie separată, deasupra inputului */
+  font-weight: bold; /* text accentuat pentru claritate */
+  margin-bottom: 0.25rem; /* mic spațiu între label și input */
+}
+
+/* SELECTORI DE TIP (input, textarea)
+   Se aplică acestor două elemente de formă.
+   Scop: câmpuri uniforme, lizibile și ușor de folosit. */
+input,
+textarea {
+  width: 100%; /* ocupă toată lățimea containerului */
+  padding: 0.5rem; /* spațiu intern pentru text */
+  border: 1px solid #ccc; /* contur gri clar */
+  border-radius: 4px; /* colțuri rotunjite */
+  font: inherit; /* preia fontul de la body (consistență) */
+}
+
+/* PSEUDO-CLASĂ :focus
+   Se aplică atunci când utilizatorul selectează câmpul (click / tab).
+   Scop: feedback vizual clar – știm unde scriem. */
+input:focus,
+textarea:focus {
+  outline: 2px solid #0059b3; /* chenar albastru intens la focus */
+}
+
+/* =========================
+   BUTON DE TRIMITERE
+   ========================= */
+
+/* .btn → SELECTOR DE CLASĂ
+   Stilizează butonul „Trimite”.
+   Scop: să arate ca un buton vizibil, accesibil și clar. */
+.btn {
+  display: inline-block; /* permite padding și dimensiuni fixe */
+  background-color: #0059b3; /* culoare principală (albastru brand) */
+  color: white; /* text alb pentru contrast */
+  border: none; /* elimină chenarul implicit */
+  padding: 0.5rem 1rem; /* spațiu interior orizontal și vertical */
+  border-radius: 4px; /* colțuri rotunjite */
+  cursor: pointer; /* cursor mână la hover */
+}
+
+/* .btn:hover → PSEUDO-CLASĂ
+   Schimbă culoarea butonului la trecerea mouse-ului. */
+.btn:hover {
+  background-color: #004999; /* albastru mai închis → efect de apăsare */
+}
+/* Bună practică:
+   - menține contrast suficient și o tranziție clară.
+   - dacă ai timp, poți adăuga și o tranziție lină (transition). */
+
+/* =========================
+   INFORMAȚII DE CONTACT
+   ========================= */
+
+/* .contact-info → SELECTOR DE CLASĂ
+   Bloc separat cu informații de contact (adresă, email).
+   Scop: evidențiere ușoară ca o casetă de notă. */
+.contact-info {
+  margin-top: 2rem; /* separare clară de formular */
+  background-color: #eaf3ff; /* albastru foarte deschis → subtil */
+  padding: 1rem; /* spațiu interior */
+  border-radius: 6px; /* colțuri rotunjite */
+  border-left: 4px solid #0059b3; /* linie laterală de accent albastru */
+}
+/* Acest tip de secțiune se numește uneori „callout” – atrage atenția,
+   dar fără să distragă de la conținutul principal. */
+
+/* =========================
+   SELECTOR DE ID – FORMULAR
+   ========================= */
+
+/* #main-form → formularul principal de contact */
+#main-form {
+  border: 2px dashed #0059b3; /* chenar punctat – evidențiere vizuală */
+  padding: 1rem; /* spațiu interior */
+  background-color: #f7fbff; /* fundal albăstrui foarte deschis */
+}

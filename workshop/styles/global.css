@@ -1,0 +1,200 @@
+/* =========================
+   RESET DE BAZĂ
+   ========================= */
+
+/* SELECTOR UNIVERSAL (*) → aplică stilul tuturor elementelor HTML */
+* {
+  margin: 0; /* elimină marginile implicite ale browserului (ex: la <body>, <h1>, <p>) */
+  padding: 0; /* elimină spațiile interne implicite */
+  box-sizing: border-box; /* face ca padding-ul și border-ul să fie incluse în dimensiunea totală → layout mai previzibil */
+}
+/* Vezi https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors */
+
+/* =========================
+   SETĂRI GENERALE
+   ========================= */
+
+/* SELECTOR DE TIP (html) */
+html {
+  font-size: 16px; /* definește mărimea de bază pentru unitatea rem (1rem = 16px) */
+}
+
+/* SELECTOR DE TIP (body) */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* font „safe” de sistem: arată bine pe orice platformă */
+  color: #222; /* text principal gri-închis (contrast bun, dar mai plăcut decât negru) */
+  background-color: #f9f9f9; /* fundal deschis, neutru */
+  line-height: 1.5; /* spațiere între rânduri – mai ușor de citit */
+  padding: 1rem; /* margine interioară pentru ca textul să nu atingă marginile ecranului */
+}
+
+/* SELECTOR DE TIP (a) → toate linkurile */
+a {
+  color: #0066cc; /* albastru standard pentru linkuri */
+  text-decoration: none; /* elimină sublinierea implicită (la hover) */
+}
+
+/* PSEUDO-CLASE (hover și focus)
+   Hover = când treci cu mouse-ul
+   Focus = când linkul e selectat de la tastatură (accesibilitate) */
+a:hover,
+a:focus {
+  text-decoration: underline; /* subliniază linkul → indică acțiune */
+  color: #004999; /* albastru mai închis la interacțiune */
+}
+/* Bună practică:
+   - Linkurile trebuie să aibă un feedback vizual (hover/focus).
+   - Nu elimina complet `:focus` → ajută navigarea cu tastatura. */
+
+/* =========================
+   STRUCTURA PAGINII (HEADER + FOOTER)
+   ========================= */
+
+/* SELECTORI DE CLASĂ combinați (.site-header, .site-footer)
+   → aplică același stil la ambele */
+.site-header,
+.site-footer {
+  background-color: #0059b3; /* albastru de accent */
+  color: white; /* text alb pentru contrast */
+  padding: 0.75rem 1rem; /* spațiu interior sus/jos și lateral */
+}
+
+/* SELECTOR DE CLASĂ (.site-title)
+   → stil pentru titlul site-ului */
+.site-title {
+  font-size: 1.25rem; /* ușor mai mare decât textul normal */
+  font-weight: bold; /* evidențiere */
+  margin: 0.5rem 0; /* spațiu sus/jos */
+}
+
+/* SELECTOR DE CLASĂ (.logo)
+   → stil pentru linkul/logo-ul site-ului */
+.logo {
+  display: inline-block; /* permite aplicarea de margin/padding */
+  font-weight: bold;
+  color: white; /* alb pe fundalul albastru */
+  text-decoration: none; /* elimină sublinierea */
+}
+/* De obicei `.logo` e un link → `display:inline-block` ajută să se comporte mai natural. */
+
+/* =========================
+   NAVIGAȚIA PRINCIPALĂ
+   ========================= */
+
+/* SELECTOR DE CLASĂ (.site-nav)
+   → containerul pentru linkuri */
+.site-nav {
+  display: block; /* afișează linkurile unul sub altul (mobil) */
+  margin-top: 0.5rem; /* distanță față de titlu/logo */
+}
+
+/* SELECTOR DESCENDENT (.site-nav a)
+   → doar linkurile din navigație, nu toate linkurile din pagină */
+.site-nav a {
+  display: inline-block; /* fiecare link se comportă ca un buton */
+  color: white;
+  padding: 0.25rem 0.75rem; /* spațiu intern pentru click ușor */
+  border-radius: 0.25rem; /* colțuri rotunjite */
+}
+
+/* PSEUDO-CLASĂ :hover */
+.site-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* fundal translucid → feedback vizual la hover */
+}
+
+/* SELECTOR DE ATRIBUT [aria-current="page"]
+   → evidențiază linkul activ (pagina curentă) */
+.site-nav a[aria-current="page"] {
+  font-weight: bold;
+  border-bottom: 2px solid white; /* linie sub linkul activ */
+}
+/* Folosește aria-current pentru accesibilitate și stilizare simultană. */
+
+/* =========================
+   BUTON MENIU (mobil)
+   ========================= */
+
+/* SELECTOR DE CLASĂ (.menu-toggle)
+   → label-ul care acționează ca un buton hamburger */
+.menu-toggle {
+  display: inline-block;
+  cursor: pointer; /* cursor mână la hover */
+  font-size: 1rem; /* dimensiune clară */
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* ASCUNDEREA MENIULUI implicit pe mobil */
+.site-nav {
+  display: none; /* ascunde navigația complet */
+}
+
+/* SELECTOR COMPLEX (checkbox hack)
+   .nav-toggle:checked + .menu-toggle + .site-nav
+   Explică: dacă inputul (checkbox) e bifat,
+   afișează meniul care urmează după el în DOM. */
+.nav-toggle:checked + .menu-toggle + .site-nav {
+  display: block; /* arată meniul când butonul e apăsat */
+}
+/* Acesta este un „truc” CSS-only pentru a deschide/închide meniul fără JavaScript. */
+
+/* =========================
+   CONȚINUT PRINCIPAL
+   ========================= */
+
+/* SELECTOR DE CLASĂ (.site-main)
+   → spațiere față de header */
+.site-main {
+  margin-top: 1rem;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+  margin-top: 2rem; /* distanță de conținutul principal */
+  text-align: center; /* text și linkuri centrate */
+}
+
+/* SELECTOR DESCENDENT (.footer-nav a) 
+  → stil specific linkurilor din footer 
+  → se aplică aceste stiluri DOAR elementelor care se află în interiorul unui alt element.
+  Cu alte cuvinte, îi spui browserului:
+  „Caută elementul X, dar numai dacă este copil sau nepot al elementului Y.” */
+
+.footer-nav a {
+  color: white;
+  margin: 0 0.5rem; /* spațiu orizontal între linkuri */
+}
+.footer-nav a:hover {
+  text-decoration: underline; /* feedback vizual la hover */
+}
+
+/* =========================
+   MEDIA QUERY (desktop)
+   ========================= */
+
+/* MEDIA QUERY: se aplică DOAR dacă ecranul are min. 700px lățime */
+@media (min-width: 700px) {
+  body {
+    padding: 2rem; /* mai mult spațiu pe ecrane mari */
+  }
+
+  .menu-toggle {
+    display: none; /* ascunde butonul hamburger pe desktop */
+  }
+
+  .site-nav {
+    display: inline-block; /* meniul e vizibil permanent */
+  }
+
+  .site-nav a {
+    margin-right: 0.5rem; /* spațiu între linkurile din meniu */
+  }
+}
+/* Bună practică:
+   - Abordare "mobile first": meniul e ascuns implicit, apoi îl afișăm la ecrane mari.
+   - Media queries permit design adaptiv fără JS. */

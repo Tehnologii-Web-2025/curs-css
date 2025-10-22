@@ -1,0 +1,73 @@
+/* =========================
+   PAGINA "ABOUT"
+   ========================= */
+
+/* .page → SELECTOR DE CLASĂ
+   Țintește containerul principal al conținutului paginii.
+   Scop: să creeze o zonă clară, lizibilă, cu fundal separat. */
+.page {
+  background-color: white; /* fundal alb → textul se citește ușor */
+  padding: 1rem; /* spațiu intern între margini și text */
+  border-radius: 6px; /* colțuri rotunjite, look modern */
+  border: 1px solid #ddd; /* contur gri deschis, delimitează vizual blocul */
+}
+
+/* .page h2 → SELECTOR DESCENDENT (clasă + element)
+   Se aplică doar la titlurile h2 care se află în interiorul clasei .page.
+   Scop: accentuează subtitlurile din pagină. */
+.page h2 {
+  color: #0059b3; /* albastru consistent cu tema generală */
+  margin-bottom: 0.5rem; /* spațiu sub titlu, înainte de paragrafe */
+}
+/* Bună practică:
+   - Folosește selectori descendenți când vrei un stil aplicat doar în anumite zone. */
+
+/* =========================
+   SECȚIUNI (team / tech / credits)
+   ========================= */
+
+/* .team, .tech, .credits → SELECTORI DE CLASĂ GRUPAȚI
+   Toate aceste secțiuni au spațiu de separare față de elementele anterioare. */
+.team,
+.tech,
+.credits {
+  margin-top: 1rem; /* distanță între secțiuni pentru ritm vizual */
+}
+/* Gruparea selectorilor economisește cod și menține consistența. */
+
+/* SELECTOR DE TIP (ul)
+   Se aplică tuturor listelor neordonate din pagină. */
+ul {
+  list-style-type: circle; /* schimbă marcatorii (buline) în cercuri */
+  padding-left: 1.5rem; /* indentare spre dreapta → aliniere frumoasă a textului */
+}
+/* Explicatie: marginile implicite ale <ul> diferă între browsere,
+   deci e bine să le definim clar. */
+
+/* =========================
+   SECȚIUNEA DE "CREDITS"
+   ========================= */
+
+/* .credits → SELECTOR DE CLASĂ
+   Se aplică doar blocului care conține mulțumiri sau surse.
+   Scop: să iasă puțin în evidență, dar subtil, ca o notă informativă. */
+.credits {
+  background-color: #eaf3ff; /* albastru foarte deschis → vizual prietenos */
+  border-left: 4px solid #0059b3; /* linie laterală de accent */
+  padding: 1rem; /* spațiu intern confortabil */
+  border-radius: 6px; /* colțuri rotunjite (consistență vizuală) */
+}
+/* Bună practică:
+   - "callout" vizual folosit pentru note, mesaje sau mulțumiri.
+   - contrast suficient fără a distrage atenția de la restul conținutului. */
+
+/* =========================
+   SELECTOR DE ID – ABOUT
+   ========================= */
+
+/* #tech-section → stil unic pentru secțiunea de tehnologii */
+#tech-section {
+  background-color: #f0f8ff; /* albastru foarte deschis */
+  border-left: 3px solid #0059b3;
+  padding: 1rem;
+}

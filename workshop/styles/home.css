@@ -1,0 +1,133 @@
+/* =========================
+   HERO SECTION
+   ========================= */
+
+/* .hero → SELECTOR DE CLASĂ
+   Țintește secțiunea principală "hero" (un container).
+   Scop: să arate ca un panou/card vizibil și aerisit. */
+.hero {
+  background-color: white; /* fundal alb pentru contrast cu pagina */
+  border: 1px solid #ddd; /* contur subtil care separă vizual secțiunea */
+  border-radius: 8px; /* colțuri rotunjite, aspect modern */
+  padding: 1rem; /* spațiu interior pentru respirare (unități relative) */
+  margin-bottom: 2rem; /* spațiu față de secțiunea următoare */
+  text-align: center; /* aliniere centrală a textului din hero */
+}
+
+/* .hero-lead → SELECTOR DE CLASĂ
+   Țintește paragraful introductiv din hero.
+   Scop: un text puțin mai mare, mai lizibil, cu spațiere clară. */
+.hero-lead {
+  font-size: 1.1rem; /* ușor mai mare decât textul de bază */
+  color: #444; /* gri închis: bună lizibilitate fără "negru dur" */
+  margin: 0.5rem 0 1rem; /* sus 0.5rem, lateral 0, jos 1rem → ritm vertical */
+}
+
+/* .hero-media img → SELECTOR DESCENDENT (clasă + element)
+   Țintește DOAR imaginile aflate în elemente cu clasa .hero-media.
+   Scop: imagini responsive, cu colțuri rotunjite. */
+.hero-media img {
+  max-width: 100%; /* imaginea nu depășește containerul (responsive) */
+  height: auto; /* păstrează proporțiile imaginii */
+  border-radius: 6px; /* colțuri rotunjite consistente cu restul stilului */
+  margin-top: 1rem; /* spațiu între text și imagine */
+}
+
+/* .hero-media figcaption → SELECTOR DESCENDENT (clasă + element)
+   Țintește legendă imaginii din hero.
+   Scop: legendă discretă, secundară vizual. */
+.hero-media figcaption {
+  font-size: 0.85rem; /* puțin mai mic decât textul normal → rol secundar */
+  color: #666; /* gri mediu: contrast suficient, dar nu dominant */
+  margin-top: 0.25rem; /* spațiu mic între imagine și legendă */
+}
+
+/* =========================
+   DESTINAȚII
+   ========================= */
+
+/* .destinations → SELECTOR DE CLASĂ (container de listă)
+   Scop: separă vizual secțiunea de ce urmează. */
+.destinations {
+  margin-bottom: 2rem; /* spațiu generos sub listă */
+}
+
+/* .destination → SELECTOR DE CLASĂ (fiecare item/card)
+   Scop: fiecare destinație arată ca un card separat. */
+.destination {
+  background-color: white; /* fundal alb pentru claritate */
+  border: 1px solid #ccc; /* contur ușor mai vizibil decât la hero */
+  border-radius: 8px; /* colțuri rotunjite consistente */
+  padding: 1rem; /* spațiu intern pentru conținut */
+  margin-bottom: 1rem; /* spațiu între carduri */
+}
+
+/* .destination-title → SELECTOR DE CLASĂ
+   Scop: titlul destinației are culoare de accent + spațiere. */
+.destination-title {
+  color: #0059b3; /* accent albastru (consistență cu brandul/tema) */
+  margin-bottom: 0.5rem; /* separă titlul de descriere/imagine */
+}
+
+/* .description → SELECTOR DE CLASĂ (paragrafe explicative)
+   Scop: text descriptiv lizibil, dar discret față de titluri. */
+.description {
+  color: #444; /* gri închis pentru citire comodă */
+  margin-bottom: 0.5rem; /* un pic de spațiu sub paragrafe */
+}
+
+/* .destination-media img → SELECTOR DESCENDENT
+   Scop: imaginile din carduri sunt responsive și armonizate vizual. */
+.destination-media img {
+  max-width: 100%; /* să nu iasă din container */
+  height: auto; /* păstrează proporțiile */
+  border-radius: 6px; /* colțuri rotunjite ca la hero → coeziune */
+}
+
+/* =========================
+   ASIDE (tips)
+   ========================= */
+
+/* .tips → SELECTOR DE CLASĂ (bloc informativ secundar)
+   Scop: să iasă în evidență ca un "callout" informativ. */
+.tips {
+  background-color: #eaf3ff; /* albastru foarte deschis → asociere cu informație */
+  border-left: 4px solid #0059b3; /* bară stângă ca indiciu vizual puternic */
+  padding: 1rem; /* spațiu intern pentru conținut */
+  border-radius: 6px; /* colțuri rotunjite */
+}
+
+/* .tips h2 → SELECTOR DESCENDENT (clasă + element)
+   Scop: spațiere sub titlul secțiunii de tips. */
+.tips h2 {
+  margin-bottom: 0.5rem; /* separă titlul de listă/paragraf */
+}
+
+/* .tips-list → SELECTOR DE CLASĂ (listă neordonată stil default)
+   Scop: listă clară, cu buline aliniate frumos. */
+.tips-list {
+  list-style-type: disc; /* buline standard, ușor de urmărit */
+  padding-left: 1.5rem; /* indentare pentru alinierea marcatorilor */
+}
+
+/* .note → SELECTOR DE CLASĂ (text secundar/explicativ)
+   Scop: note ajutătoare, mai discrete vizual. */
+.note {
+  font-size: 0.9rem; /* puțin mai mic decât textul de bază */
+  color: #555; /* gri intermediar: se vede, dar nu domină */
+  margin-top: 0.5rem; /* spațiu față de elementul anterior */
+}
+
+/* =========================
+   SELECTOR DE ID – HERO
+   ========================= */
+
+/* #hero-section → secțiunea principală din pagina Home 
+Un ID este unic într-un fișier HTML.
+Fiecare pagină are propriul univers. Poți avea același ID în alte pagini, dar nu de două ori în aceeași pagină.
+*/
+
+#hero-section {
+  background-color: #fff8e1; /* galben pal – evidențiere subtilă */
+  border: 2px solid #ffcc00; /* contur mai pronunțat pentru demonstrație */
+}
