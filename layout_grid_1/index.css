@@ -1,3 +1,7 @@
+/* ------------------------------------------------------------------
+   Grid exercise #1: fixed track demo that mixes an intrinsic column,
+   two fractional columns, and two rows to resemble a simple dashboard.
+------------------------------------------------------------------ */
 html,
 body {
   height: 100%;
@@ -15,8 +19,8 @@ body {
   height: 100%;
   display: grid;
   gap: 20px;
-  grid-template-columns: 10% 2fr 1fr;
-  grid-template-rows: 150px 1fr;
+  grid-template-columns: 10% 2fr 1fr; /* Curates three columns with unique sizing rules */
+  grid-template-rows: 150px 1fr; /* Dedicated row for the header followed by flexible content */
 }
 
 .item {
@@ -33,13 +37,13 @@ body {
 
 .header {
   background-color: #75a4b4;
-  grid-column: 1 / -1;
+  grid-column: 1 / -1; /* Header spans the entire width regardless of track count */
 }
 
 .menu {
   background-color: #ff7363;
   grid-column: 1 / 2;
-  grid-row: 2 / 3;
+  grid-row: 2 / 3; /* Menu anchored to the first column of the second row */
 }
 
 .content {
@@ -52,4 +56,5 @@ body {
   background-color: #f0b54e;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
+  /* Footer sits beside the content to show independent cell placement */
 }

@@ -1,3 +1,7 @@
+/* ------------------------------------------------------------------
+   Grid exercise #2: a classic 12-column scaffold with fixed header and
+   footer rows, ideal for explaining how spanning works across tracks.
+------------------------------------------------------------------ */
 html,
 body {
   height: 100%;
@@ -15,7 +19,7 @@ body {
   height: 100%;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr); /* Uniform columns keep the math easy for students */
   grid-template-rows: 100px 1fr 100px;
 }
 
@@ -26,21 +30,23 @@ body {
   align-items: center;
   gap: 20px;
   justify-content: flex-start;
+  /* The header doubles as a flex container to illustrate layout nesting */
 }
 
 .menu {
   background-color: #ff7363;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 3; /* Navigation occupies the first quarter of the grid */
 }
 
 .content {
   background-color: #85c4b4;
-  grid-column: 4 / -1;
+  grid-column: 4 / -1; /* Content stretches across the remaining columns */
 }
 
 .footer {
   background-color: #f0b54e;
   grid-column: 1 / -1;
+  /* Footer spans the whole grid for symmetry with the header */
 }
 
 .item {
@@ -59,8 +65,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  /* Inline-flex ensures text and potential icons align neatly */
 }
 
 .logout {
-  margin-left: auto;
+  margin-left: auto; /* Push the logout action to the opposite edge for balance */
 }

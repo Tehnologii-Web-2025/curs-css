@@ -1,3 +1,7 @@
+/* ------------------------------------------------------------------
+   Grid exercise #3: introduces named lines and template areas to show
+   how semantics and readability improve in more complex layouts.
+------------------------------------------------------------------ */
 html,
 body {
   height: 100%;
@@ -25,6 +29,8 @@ body {
     "H H H H H H"
     "M C C C C C"
     "F F F F F F";
+  /* Named lines make it obvious where the content band starts,
+     while template areas keep the child placement declarative */
 }
 
 .item {
@@ -41,7 +47,7 @@ body {
 
 .header {
   background-color: #75a4b4;
-  grid-area: H;
+  grid-area: H; /* Directly maps to the “H” area defined above */
 }
 
 .menu {
