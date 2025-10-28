@@ -10,17 +10,24 @@
   </head>
 
   <body>
-    <header id="top" class="site-header">
+    <header class="site-header">
+      <a href="index.html" class="logo" aria-label="Acasă">
+        <span class="logo-text">Hoinarind prin lume</span>
+      </a>
       <h1 class="site-title">Explorăm destinații faine</h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+      <label for="nav-toggle" class="menu-toggle" aria-label="Deschide meniul"
+        >☰ Meniu</label
+      >
       <nav class="site-nav" aria-label="Navigație principală">
-        <a href="index.html">Acasă</a>
+        <a href="index.html" aria-current="page">Acasă</a>
         <a href="about.html">Despre</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <main class="site-main">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero" id="hero-section" aria-labelledby="hero-title">
         <h2 id="hero-title">Bun venit!</h2>
         <p class="hero-lead">
           Găsește inspirație pentru următoarea ta călătorie.

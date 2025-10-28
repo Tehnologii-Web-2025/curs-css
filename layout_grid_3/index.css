@@ -1,57 +1,66 @@
+/* ------------------------------------------------------------------
+   Grid exercise #3: introduces named lines and template areas to show
+   how semantics and readability improve in more complex layouts.
+------------------------------------------------------------------ */
+html,
 body {
-  margin: 0;
-} 
-.container {
-  box-sizing: border-box;
-  background-color: #FFEBB1;
-  padding: 20px;
-  
-  
-  display: grid;
-  gap: 5px;
-  grid-template-columns: repeat(6, 150px);
-  grid-template-rows: repeat(2, 150px);
+  height: 100%;
 }
 
+body {
+  margin: 0;
+  background-color: #f6f2e4;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.container {
+  box-sizing: border-box;
+  background-color: #ffebb1;
+  padding: 20px;
+  height: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns:
+    [main-start] 1fr
+    [content-start] repeat(4, 1fr)
+    [content-end] 1fr
+    [main-end];
+  grid-template-rows: 150px 1fr 100px;
+  grid-template-areas:
+    "H H H H H H"
+    "M C C C C C"
+    "F F F F F F";
+  /* Named lines make it obvious where the content band starts,
+     while template areas keep the child placement declarative */
+}
 
 .item {
-  font-size: 40px;
+  font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   padding: 30px;
-  color: #FFEBB1;
+  color: #ffebb1;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 }
 
-.item-1, .item-5, .item-7 {
-  background-color: #75a4B4;
+.header {
+  background-color: #75a4b4;
+  grid-area: H; /* Directly maps to the “H” area defined above */
 }
 
-.item-3, .item-9, .item-11 {
-  background-color: #85C4B4;
+.menu {
+  background-color: #ff7363;
+  grid-area: M;
 }
 
-.item-4, .item-8, .item-12 {
-  background-color: #F0B54E;
+.content {
+  background-color: #85c4b4;
+  grid-area: C;
 }
 
-.item-2, .item-6, .item-10 {
-  background-color: #FF7363;
+.footer {
+  background-color: #f0b54e;
+  grid-area: F;
 }

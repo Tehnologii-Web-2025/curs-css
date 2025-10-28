@@ -1,72 +1,73 @@
+/* ------------------------------------------------------------------
+   Grid exercise #2: a classic 12-column scaffold with fixed header and
+   footer rows, ideal for explaining how spanning works across tracks.
+------------------------------------------------------------------ */
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-} 
+  background-color: #f6f2e4;
+}
+
 .container {
   box-sizing: border-box;
-  background-color: #FFEBB1;
+  background-color: #ffebb1;
   padding: 20px;
-  height: 100vh;
-  
-  
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 100px auto 100px;
-  gap: 5px;
+  gap: 20px;
+  grid-template-columns: repeat(12, 1fr); /* Uniform columns keep the math easy for students */
+  grid-template-rows: 100px 1fr 100px;
 }
-
 
 .header {
+  background-color: #75a4b4;
   grid-column: 1 / -1;
-}
-
-.menu {}
-
-.content {
-  grid-column: 2 / -1;
-}
-
-.footer {
-  grid-column: 1 / -1;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.item {
-  font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  padding: 30px;
-  color: #FFEBB1;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.header {
-  background-color: #75a4B4;  
+  gap: 20px;
+  justify-content: flex-start;
+  /* The header doubles as a flex container to illustrate layout nesting */
 }
 
 .menu {
-  background-color: #FF7363;  
+  background-color: #ff7363;
+  grid-column: 1 / span 3; /* Navigation occupies the first quarter of the grid */
 }
 
 .content {
-  background-color: #85C4B4;  
+  background-color: #85c4b4;
+  grid-column: 4 / -1; /* Content stretches across the remaining columns */
 }
 
-.footer {  
-  background-color: #F0B54E;
+.footer {
+  background-color: #f0b54e;
+  grid-column: 1 / -1;
+  /* Footer spans the whole grid for symmetry with the header */
+}
+
+.item {
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 30px;
+  color: #ffebb1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* Inline-flex ensures text and potential icons align neatly */
+}
+
+.logout {
+  margin-left: auto; /* Push the logout action to the opposite edge for balance */
 }

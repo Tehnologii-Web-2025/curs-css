@@ -1,50 +1,53 @@
+/* ------------------------------------------------------------------
+   Grid warm-up: create a centered three-column canvas that highlights
+   how CSS Grid automatically distributes items without extra rules.
+------------------------------------------------------------------ */
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-} 
+  background-color: #f6f2e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   box-sizing: border-box;
-  background-color: #FFEBB1;
+  background-color: #ffebb1;
   padding: 20px;
-/*   display: grid;
-  gap: 5px; */
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Equal tracks make the grid structure obvious */
 }
 
 .item {
-  background-color: #FF7363;
-  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   padding: 30px;
-  color: #FFEBB1;
-/*   display: flex;
-  justify-content: center;
-  align-items: center; */
+  color: #ffebb1;
+  border-radius: 8px;
+  /* Using flexbox inside each cell keeps the numbering perfectly centered */
 }
 
+.item-1,
+.item-3,
+.item-5 {
+  background-color: #85c4b4;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.item-1, .item-3, .item-5 {
-  background-color: #85C4B4;
+.item-2,
+.item-6 {
+  background-color: #ff7363;
 }
 
 .item-4 {
-  background-color: #F0B54E;
-}
-
-.item-2, .item-6 {
-  background-color: #FF7363;
+  background-color: #f0b54e;
 }

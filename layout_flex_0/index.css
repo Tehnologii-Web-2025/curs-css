@@ -1,57 +1,86 @@
+/* ------------------------------------------------------------------
+   Global canvas setup: stretch the flex playground to the viewport
+   so every alignment example is visible without scrolling.
+------------------------------------------------------------------ */
+html,
 body {
-  margin: 0;
-} 
-
-.container {
-  background-color: #FFEBB1;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  gap: 20px;
+  height: 100%;
 }
 
+/* Center the entire demo for a clean presentation */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f2e4;
+}
+
+/* ------------------------------------------------------------------
+   Flex container: demonstrates wrapping, main/cross-axis alignment,
+   and how extra space is shared once items wrap onto a new row.
+------------------------------------------------------------------ */
+.container {
+  box-sizing: border-box;
+  background-color: #ffebb1;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+/* Shared look & feel for the numbered blocks */
 .item {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  padding: 30px;
-  color: #FFEBB1;
+  padding: 20px;
+  color: #ffebb1;
+  flex: 0 1 180px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.item-1, .item-3 {
-  background-color: #85C4B4;
+.item-1,
+.item-3 {
+  background-color: #85c4b4;
 }
 
 .item-4 {
-  background-color: #F0B54E;
+  background-color: #f0b54e;
 }
 
-.item-2, .item-5 {
-  background-color: #FF7363;
+.item-2,
+.item-5 {
+  background-color: #ff7363;
 }
 
+/* Individual item tweaks used to illustrate child-level overrides */
+.item-1 {
+  order: -1; /* Pull the first tile ahead of the others without reordering markup */
+}
 
+.item-2 {
+  align-self: center; /* Show how a child can diverge from the container's cross-axis alignment */
+}
+
+.item-3 {
+  flex: 1 5 300px; /* Combines basis/grow/shrink so it expands to fill leftover width first */
+}
+
+.item-4 {
+  flex-shrink: 5; /* Collapses faster when space is tight, underscoring the role of shrink factors */
+}
+
+.item-5 {
+  margin-left: auto; /* Occupies the far edge of the row, mimicking “push to end” behaviors */
+  align-self: flex-end;
+  /* Align self also proves that cross-axis alignment can vary per element */
+}
